@@ -1,6 +1,7 @@
 import requests
 from tkinter import *
 
+
 def pegar_cotacoes():
     requisicao = requests.get(
         "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL,ETH-BRL,GBP-BRL")
@@ -35,10 +36,12 @@ y = (sh - wh) / 2
 janela.geometry("%dx%d+%d+%d" % (ww, wh, x, y))
 
 
-texto_orientacao = Label(janela, text="Clique no botão para ver as cotações das moedas")
+texto_orientacao = Label(
+    janela, text="Clique no botão para ver as cotações das moedas")
 texto_orientacao.grid(column=0, row=0, padx=20, pady=10,)
 
-botao = Button(janela, text="Buscar Cotações", bg="gray",fg="white", width=30, height=2, command=pegar_cotacoes)
+botao = Button(janela, text="Buscar Cotações", bg="gray",
+               fg="white", width=30, height=2, command=pegar_cotacoes)
 # pad é os espacamentos entre o eixo X e Y #ipad tamanho do botao
 botao.grid(column=0, row=1, padx=10, pady=10)
 # botao.pack(side = BOTTOM)
